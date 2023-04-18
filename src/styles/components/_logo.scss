@@ -1,0 +1,61 @@
+.logo {
+    text-align: right;
+
+    &:hover a {
+        color: $color-dark-dark
+    }
+
+    & a {
+        @include flexbox($direction: column);
+        
+        text-decoration: none;
+
+        & span {
+            transition: all 0.5s linear;
+        }
+
+        &:hover span {
+            color: $color-tertiary;
+
+            transition: all 0.5s linear;
+        }
+    }
+
+		&__title {
+            margin-bottom:10px;
+
+            @include font(
+                $font-family: 'Georgia',
+                $font-size: calc(32/16) * 1rem,
+                $line-height: 1.1,
+                $color: $color-primary,
+                $letter-spacing:0.06em);
+		}
+
+		&__subtitle {
+            @include font(
+                $font-size: calc(13/16) * 1rem,
+                $line-height: 1.15,
+                $color: $color-tertiary,
+                $letter-spacing:0.1em);
+		}
+}
+
+.header-light {
+    & .logo__title {
+        color: $color-dark;
+    }
+    & .logo__subtitle {
+        color: $color-dark-dark;
+    }
+
+    & .logo a span {
+        transition: all 0.5s linear;
+    }
+
+    & .logo a:hover span {
+        color: $color-dark-dark;
+
+        transition: all 0.5s linear;
+    }
+} 

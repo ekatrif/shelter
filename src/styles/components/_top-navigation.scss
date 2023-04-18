@@ -1,0 +1,142 @@
+.top-nav {
+    margin-top: 16px;
+
+		&__list {
+            @include flexbox($justifyContent: flex-end);
+            margin:0;
+            list-style: none;
+		}
+
+        &__list * + * {
+            margin-left: 35px;
+        }
+
+		&__item {
+            padding:0;
+            & a{
+            @include font(
+                $color: $link-color);
+                text-decoration: none;
+
+            transition: all 0.5s linear;
+            }
+            & a:hover {
+                @include font(
+                    $color: $link-color-active);
+
+                transition: all 0.5s linear;
+                }
+            &-active > a {
+                padding-bottom: 4px;
+                border-bottom: 3px solid #F1CDB3;
+            
+                @include font(
+                    $color: $link-color-active);
+
+                pointer-events: none;
+            }
+		}
+}
+
+.header-light {
+
+    & .logo, & .top-nav__list{
+        margin-top:30px;
+    }
+
+    & .top-nav__item a {
+        color:$color-dark;
+
+        &:hover {
+            color: $color-dark-dark;
+        }
+
+    }
+
+    & .top-nav__item-active a {
+        color: $color-dark;
+    }
+}
+
+@include burger-active {
+    .top-nav {
+        display:block;
+        position:fixed;
+        top:0;
+        right:0;
+    
+        margin-top:0;
+
+        width:320px;
+        height: 100vh;
+    
+        background-color: $color-dark-dark;
+
+        transform: translateX(320px);
+
+        transition: transform 0.5s linear;
+
+        .header-light & {
+            background-color: $color-tertiary;
+        }
+
+        &__list {
+            position:absolute;
+            top: 248px;
+            right:0;
+    
+            width:320px;
+
+            padding:0;
+    
+            z-index:12;
+    
+            @include flexbox($direction:column,
+            $justifyContent: center,
+            $alignItems:center);
+        }
+    
+        &__list * + * {
+            margin-left: 0;
+            margin-top: 40px;
+        }
+    
+        &__item {
+    
+            & a, & a:hover{
+            @include font(
+                $font-size: calc(32/16) * 1rem,
+                $color: $link-color);
+            }
+
+            &-active > a {
+                @include font(
+                    $font-size: calc(32/16) * 1rem,
+                    $color: $link-color-active);
+    
+                padding-bottom: 6px;
+    
+            }
+        }
+}
+
+.top-nav-opened {
+
+        transform: translateX(0);
+    
+        transition: transform 0.5s linear;
+    
+        z-index: 11;
+    
+        // transition: all 0.5s linear;
+        
+    
+}
+}
+
+// @include burger-active {
+//     .top-nav {
+//         display:none;
+// }
+// }
+

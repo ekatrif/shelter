@@ -1,0 +1,238 @@
+//Our friends
+
+.friends {
+    background-color: $color-light;
+
+    &__container {
+        @include flexbox(
+            $direction: column,
+            $alignItems: center);
+
+        padding: 80px 40px 100px;        
+
+        & h1 {
+            width:400px;
+
+            margin-bottom:60px;
+
+            @include font($font-family: 'Georgia',
+            $font-size: calc(35/16) * 1rem,
+            $line-height: 1.3,
+            $letter-spacing: 0.06em,
+            $color: $color-dark);
+
+            text-align: center;
+        }
+
+        & > a {
+            margin-top:60px;
+        }
+    }
+}
+
+.gallery {
+        @include flexbox($justifyContent: space-between,
+        $alignContent:flex-start,
+        $wrap: wrap);
+
+        width: 100%;
+        height: 900px;
+
+        opacity:1;
+        visibility: visible;
+        transition: all 2s linear;
+
+        & > * + * {
+            margin-left: 40px;
+        }
+
+        & > * {
+            margin-left: 0;
+        }
+
+        & > *:nth-child(n+5) {
+            margin-top: 30px;
+        }
+
+    &__item {
+        @include flexbox(
+            $direction: column,
+            $alignItems: center);
+
+        width: 270px;
+        height: 435px;
+
+        overflow: hidden;
+
+        border-radius: 9px;
+        background-color: $link-color-active;
+
+        cursor:pointer;
+
+        transition: all 0.5s linear;
+
+        &:hover {
+            box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
+            background-color: $color-tertiary;
+            transition: all 0.5s linear;
+        }
+
+        &:hover button {
+            background: $color-primary-light;
+            border-color: $color-primary-light;
+            transition: all 0.5s linear;
+        }
+
+        & > button {
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
+    }
+
+    & .pet {
+
+        &__photo {
+            width:270px;
+            height:270px;
+
+            margin-bottom:30px;
+        }
+    
+        &__name {
+            @include font(
+                $font-family: 'Georgia',
+                $font-size: calc(20/16) * 1rem,
+                $line-height: 1.136,
+                $color: $color-dark,
+                $letter-spacing: 0.06em);
+        }
+    }
+}
+
+@media (max-width:1209px) {
+    .gallery {
+            & > * + * {
+                margin-left: 40px;
+            }
+
+            & > *:nth-child(3n+4) {
+                margin-left: 0;
+            }
+    
+            & > *:nth-child(n+4) {
+                margin-top: 30px;
+            }
+    }
+}
+
+@media (max-width:1050px) {
+    .friends {    
+        &__container {    
+            padding: 80px 94px 76px;
+
+            & h1 {    
+                margin-bottom:30px;
+            }
+        }
+    }
+    .gallery {   
+            height:1365px; 
+
+            & > * {
+                margin-left:0;
+                margin-top: 0;
+            }
+    
+            & > *:nth-child(2n) {
+                margin-left:40px;
+            }
+    
+            & > *:nth-child(n+3) {
+                margin-top: 40px;
+            }
+    }
+}
+
+@media (max-width:790px) {
+    .gallery {    
+            & > * + * {
+                margin-left: auto;
+            }
+    
+            & > * {
+                margin-left: 0;
+                margin-top: 0;
+            }
+
+            & > *:nth-child(2n) {
+                margin-left:auto;
+            }
+    
+            & > *:nth-child(n+3) {
+                margin-top: 30px;
+            }
+    }
+}
+
+@media (max-width:767px) {
+    .friends {    
+        &__container {    
+            padding: 42px 10px;
+
+            & h1 {
+                width: 100%;
+                
+                margin-bottom:42px;
+
+                padding: 0 10px;
+                
+                font-size: calc(25/16) * 1rem;
+
+                text-align: center;
+            }
+        }
+    }
+    
+    .gallery {  
+        justify-content: center;
+
+            & > * {
+                margin-left: 50%;
+                margin-right: 50%;
+                margin-top: 0;
+            }
+
+            & > *:nth-child(2n) {
+                margin-left: 50%;
+                margin-right: 50%;
+            }
+    
+            & > *:nth-child(n+2) {
+                margin-top: 30px;
+            }
+
+            & > *:nth-child(n+4) {
+                display:none;
+            }
+    }
+}
+
+@include media-mobile-big {    
+    .gallery {  
+        justify-content: center;
+    
+            & > * {
+                margin-left: 0;
+                margin-right:0;
+                margin-top: 0;
+            }
+    
+            & > *:nth-child(n+2) {
+                margin-top: 30px;
+            }
+
+            & > *:nth-child(n+4) {
+                display:none;
+            }
+    }
+}

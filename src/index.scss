@@ -1,0 +1,24 @@
+@import './styles/vendors/normalize';
+
+@import './styles/base/typography';
+@import './styles/base/reset';
+
+@import './styles/abstracts/mixins';
+@import './styles/abstracts/variables';
+@import './styles/abstracts/placeholders';
+
+@import './styles/base/modal';
+
+@import './styles/components/burger';
+@import './styles/components/header';
+@import './styles/components/buttons';
+@import './styles/components/logo';
+@import './styles/components/top-navigation';
+@import './styles/components/slider';
+@import './styles/components/footer';
+@import './styles/components/pagination';
+
+@import './styles/base/common-styles';
+
+@import './styles/pages/main';
+@import './styles/pages/pets';

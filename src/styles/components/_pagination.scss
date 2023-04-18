@@ -1,0 +1,89 @@
+.gallery {
+
+    &__pagination {
+        @include flexbox($justifyContent: center);
+
+        margin-top:60px;
+
+        & * + * {
+            margin-left:20px;
+        }
+    }
+}
+
+.pagination {
+
+    &__state {
+
+        @include flexbox($justifyContent: center,
+        $alignItems: center);
+
+        width:50px;
+        height: 50px;
+
+        border: 2px solid;
+        border-radius: 50%;
+
+        @include font($font-family: 'Georgia',
+        $font-size: calc(20/16) * 1rem,
+        $line-height: 1.15,
+        $color: $link-color,
+        $letter-spacing: 0.06em);
+
+        cursor: pointer;
+
+    }
+}
+
+.state {
+    &-disable {
+        border-color: $link-color;
+        color: $link-color;
+        background-color: transparent;
+
+        pointer-events: none;
+    }
+
+    &-active {
+        border-color: $color-primary;
+        color: $color-dark-dark;
+        background-color: $color-primary;
+    }
+
+    &-available {
+        border-color: $color-primary;
+        color: $color-dark-dark;
+        background-color: transparent;
+
+        transition: all 0.5s linear;
+
+        &:hover {
+            background: $color-primary-light;
+            border-color: $color-primary-light;
+            transition: all 0.5s linear;
+        }
+    }
+}
+
+@include media-tablet {
+    .gallery {
+
+        &__pagination {    
+            margin-top:40px;
+        }
+    }
+}
+
+@include media-mobile-big {
+    .gallery {
+        &__pagination {
+            @include flexbox($justifyContent: center);
+    
+            margin-top:42px;
+    
+            & * + * {
+                margin-left:10px;
+            }
+        }
+    }        
+}
