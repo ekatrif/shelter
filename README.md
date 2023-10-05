@@ -1,6 +1,6 @@
 # Вертска макета Shelter.
 
-**Ссылка на deploy**: https://ekatrif.github.io/shelter/dist/
+**Ссылка на deploy**: https://rs-shelter.netlify.app/
 
 **Ссылка на задание**: https://github.com/rolling-scopes-school/tasks/blob/master/tasks/shelter
 
