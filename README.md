@@ -1,11 +1,12 @@
-# Вертска макета Shelter Rolling Scopes School stage 1.
+# Вертска макета Shelter.
 
 **Ссылка на deploy**: https://ekatrif.github.io/shelter/dist/
 
 **Ссылка на задание**: https://github.com/rolling-scopes-school/tasks/blob/master/tasks/shelter
 
-## Использованные инструменты:
+## Стек:
 
+- Figma
 - Git
 - HTML
 - CSS
